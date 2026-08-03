@@ -294,16 +294,17 @@
 
     <section>
         <h2>Potwierdź Przybycie</h2>
-        <form id="rsvpForm">
-            <input type="text" placeholder="Imię i Nazwisko" required>
-            <select required>
-                <option value="" disabled selected>Czy będziesz z nami?</option>
-                <option value="yes">Tak, z radością przybędę!</option>
-                <option value="no">Niestety nie będę mógł/mogła</option>
-            </select>
-            <textarea rows="4" placeholder="Dodatkowe uwagi (np. dieta wegetariańska, osoba towarzysząca)"></textarea>
-            <button type="submit">Wyślij Potwierdzenie</button>
-        </form>
+        
+        <form action="https://formspree.io/f/xlgqqbov" method="POST">
+    <input type="text" name="imie" placeholder="Imię i Nazwisko" required>
+    <select name="obecnosc" required>
+        <option value="" disabled selected>Czy będziesz z nami?</option>
+        <option value="Tak">Tak, z radością przybędę!</option>
+        <option value="Nie">Niestety nie będę mógł/mogła</option>
+    </select>
+    <textarea name="uwagi" rows="4" placeholder="Dodatkowe uwagi"></textarea>
+    <button type="submit">Wyślij Potwierdzenie</button>
+</form>
     </section>
 
     <footer>
