@@ -3,267 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nasze Wesele | Anna & Piotr</title>
-    <style>
-        /* CSS - Stylizacja strony */
-        :root {
-            --primary-color: #d4af37; /* Eleganckie złoto */
-            --text-color: #2c3e50;
-            --bg-light: #fdfbf7;
-            --card-bg: #ffffff;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--text-color);
-            background-color: var(--bg-light);
-            line-height: 1.6;
-            text-align: center;
-        }
-
-        header {
-            padding: 60px 20px;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-            color: white;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            font-weight: 300;
-            letter-spacing: 2px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            font-style: italic;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* Licznik */
-        .countdown-section {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-top: -40px;
-            margin-bottom: 40px;
-        }
-
-        .countdown-title {
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            color: #777;
-        }
-
-        .timer {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .timer-box {
-            background-color: var(--bg-light);
-            padding: 15px;
-            border-radius: 8px;
-            min-width: 80px;
-        }
-
-        .timer-box span {
-            display: block;
-        }
-
-        .number {
-            font-size: 2.2rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            color: #666;
-        }
-
-        /* Sekcje z informacjami */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--primary-color);
-        }
-
-        .card h2 {
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-
-        .card p {
-            margin-bottom: 10px;
-            color: #555;
-        }
-
-        .time {
-            font-weight: bold;
-            color: var(--primary-color);
-            font-size: 1.1rem;
-        }
-
-        /* Harmonogram */
-        .timeline {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .timeline li {
-            padding: 12px 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        footer {
-            padding: 30px;
-            background-color: #2c3e50;
-            color: white;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 600px) {
-            header h1 { font-size: 2.2rem; }
-            .timer { gap: 10px; }
-            .timer-box { min-width: 65px; padding: 10px; }
-            .number { font-size: 1.6rem; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>Anna & Piotr</h1>
-        <p>Bierzemy ślub!</p>
-    </header>
-
-    <div class="container">
-        
-        <!-- Sekcja z odliczaniem -->
-        <section class="countdown-section">
-            <div class="countdown-title">Do naszego ślubu pozostało:</div>
-            <div class="timer">
-                <div class="timer-box">
-                    <span class="number" id="days">00</span>
-                    <span class="label">Dni</span>
-                </div>
-                <div class="timer-box">
-                    <span class="number" id="hours">00</span>
-                    <span class="label">Godzin</span>
-                </div>
-                <div class="timer-box">
-                    <span class="number" id="minutes">00</span>
-                    <span class="label">Minut</span>
-                </div>
-                <div class="timer-box">
-                    <span class="number" id="seconds">00</span>
-                    <span class="label">Sekund</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Informacje o miejscach -->
-        <section class="grid">
-            <div class="card">
-                <h2>Ceremonia Ślubna</h2>
-                <p class="time">Godzina 15:00</p>
-                <p><strong>Kościół św. Anny</strong></p>
-                <p>ul. Miejska 12, Warszawa</p>
-            </div>
-            <div class="card">
-                <h2>Przyjęcie Weselne</h2>
-                <p class="time">Godzina 17:00</p>
-                <p><strong>Dworek pod Różami</strong></p>
-                <p>ul. Słoneczna 45, Okolice Warszawy</p>
-            </div>
-        </section>
-
-        <!-- Harmonogram -->
-        <section class="card" style="margin-bottom: 0;">
-            <h2 style="margin-bottom: 25px;">Plan Dnia</h2>
-            <ul class="timeline">
-                <li><span>15:00</span> <span>Ceremonia w kościele</span></li>
-                <li><span>16:30</span> <span>Przejazd do domu weselnego</span></li>
-                <li><span>17:00</span> <span>Uroczysty obiad</span></li>
-                <li><span>19:00</span> <span>Pierwszy taniec</span></li>
-                <li><span>00:00</span> <span>Oczepiny & Tort</span></li>
-            </ul>
-        </section>
-
-    </div>
-
-    <footer>
-        <p>Czekamy na Was! • Anna & Piotr</p>
-    </footer>
-
-    <!-- JavaScript - Skrypt odliczający -->
-    <script>
-        // Data docelowa: 20 sierpnia 2027, godzina 15:00
-        const weddingDate = new Date("August 20, 2027 15:00:00").getTime();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
-
-            if (distance < 0) {
-                document.querySelector(".countdown-section").innerHTML = "<h2>To już dzisiaj! Witamy na naszym weselu!</h2>";
-                return;
-            }
-
-            // Obliczenia dni, godzin, minut i sekund
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1Oto kompletny szablon eleganckiej strony weselnej zawarty w jednym pliku `index.html` (połączony HTML, CSS i JavaScript). 
-
-Znajdziesz w nim wszystkie potrzebne sekcje: nagłówek z imionami, **odliczanie czasu do 20 sierpnia 2027 roku**, harmonogram uroczystości, mapki z lokalizacjami oraz prosty formularz potwierdzenia przybycia (RSVP).
-
-Możesz zapisać poniższy kod jako `index.html` i otworzyć go bezpośrednio w dowolnej przeglądarce:
-
-```html
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ślub i Wesele - Anna & Piotr</title>
+    <title>Nasze Wesele | R & O</title>
     <!-- Google Fonts: Playfair Display + Montserrat -->
-    <link href="[https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap](https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap)" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS - Stylistyka strony */
         :root {
             --primary-color: #8a735c;
             --bg-color: #fcfbfa;
@@ -290,10 +34,9 @@ Możesz zapisać poniższy kod jako `index.html` i otworzyć go bezpośrednio w 
             text-align: center;
         }
 
-        /* Hero / Header */
         header {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('[https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1500&q=80](https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1500&q=80)') center/cover no-repeat;
+            height: 75vh;
+            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -304,35 +47,49 @@ Możesz zapisać poniższy kod jako `index.html` i otworzyć go bezpośrednio w 
         }
 
         header h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.5rem;
             letter-spacing: 2px;
         }
 
-        /* Licznik */
+        header p {
+            font-size: 1.3rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
         .countdown-container {
             background-color: var(--card-bg);
             max-width: 800px;
             margin: -50px auto 40px auto;
-            padding: 30px;
+            padding: 35px 20px;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             position: relative;
             z-index: 10;
         }
 
+        .countdown-title {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
         .countdown {
             display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
         }
 
         .box {
             text-align: center;
+            min-width: 90px;
+            padding: 10px;
+            background: #faf8f5;
+            border-radius: 8px;
+            border: 1px solid var(--accent-color);
         }
 
         .box span {
@@ -341,16 +98,18 @@ Możesz zapisać poniższy kod jako `index.html` i otworzyć go bezpośrednio w 
             font-weight: 600;
             color: var(--primary-color);
             font-family: 'Playfair Display', serif;
+            line-height: 1.1;
         }
 
         .box label {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #777;
+            color: #666;
+            margin-top: 5px;
+            display: block;
         }
 
-        /* Sekcje */
         section {
             max-width: 900px;
             margin: 60px auto;
@@ -373,7 +132,6 @@ Możesz zapisać poniższy kod jako `index.html` i otworzyć go bezpośrednio w 
             margin: 10px auto 0 auto;
         }
 
-        /* Karty Lokalizacji i Harmonogramu */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -415,7 +173,6 @@ Możesz zapisać poniższy kod jako `index.html` i otworzyć go bezpośrednio w 
             background-color: #6e5b48;
         }
 
-        /* Formularz RSVP */
         form {
             background: var(--card-bg);
             padding: 30px;
@@ -457,64 +214,62 @@ Możesz zapisać poniższy kod jako `index.html` i otworzyć go bezpośrednio w 
         }
 
         @media (max-width: 600px) {
-            header h1 { font-size: 2.5rem; }
+            header h1 { font-size: 2.8rem; }
+            .countdown { gap: 10px; }
+            .box { min-width: 70px; padding: 8px; }
             .box span { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Sekcja Powitalna -->
     <header>
-        <h1>Anna & Piotr</h1>
-        <p>BIERZEMY ŚLUB!</p>
+        <h1>R & O</h1>
+        <p>Bierzemy Ślub!</p>
     </header>
 
-    <!-- Licznik czasu -->
     <div class="countdown-container">
-        <h2>Odliczamy dni do naszego ślubu!</h2>
+        <h2 class="countdown-title">Do naszego ślubu pozostało:</h2>
         <div class="countdown">
             <div class="box">
-                <span id="days">0</span>
+                <span id="days">00</span>
                 <label>Dni</label>
             </div>
             <div class="box">
-                <span id="hours">0</span>
+                <span id="hours">00</span>
                 <label>Godzin</label>
             </div>
             <div class="box">
-                <span id="minutes">0</span>
+                <span id="minutes">00</span>
                 <label>Minut</label>
             </div>
             <div class="box">
-                <span id="seconds">0</span>
+                <span id="seconds">00</span>
                 <label>Sekund</label>
             </div>
         </div>
     </div>
 
-    <!-- Główne Informacje -->
     <section>
         <h2>Gdzie i Kiedy</h2>
         <div class="grid">
             <div class="card">
                 <h3>Ceremonia Ślubna</h3>
-                <div class="time">Godzina 15:00</div>
+                <div class="time">20 Sierpnia 2027 • Godzina 15:00</div>
                 <p><strong>Kościół pw. Św. Anny</strong></p>
                 <p>ul. Miodowa 10, Warszawa</p>
-                <a href="[https://maps.google.com](https://maps.google.com)" target="_blank" class="btn-map">Zobacz na mapie</a>
+                <a href="https://maps.google.com" target="_blank" class="btn-map">Zobacz na mapie</a>
             </div>
             <div class="card">
                 <h3>Przyjęcie Weselne</h3>
-                <div class="time">Godzina 17:00</div>
+                <div class="time">20 Sierpnia 2027 • Godzina 17:00</div>
                 <p><strong>Dworek pod Różami</strong></p>
                 <p>ul. Leśna 45, Okolice Warszawy</p>
-                <a href="[https://maps.google.com](https://maps.google.com)" target="_blank" class="btn-map">Zobacz na mapie</a>
+                <a href="https://maps.google.com" target="_blank" class="btn-map">Zobacz na mapie</a>
             </div>
         </div>
     </section>
 
-    <!-- Harmonogram -->
     <section>
         <h2>Harmonogram Dnia</h2>
         <div class="grid">
@@ -537,7 +292,6 @@ Możesz zapisać poniższy kod jako `index.html` i otworzyć go bezpośrednio w 
         </div>
     </section>
 
-    <!-- Potwierdzenie przybycia (RSVP) -->
     <section>
         <h2>Potwierdź Przybycie</h2>
         <form id="rsvpForm">
@@ -553,38 +307,38 @@ Możesz zapisać poniższy kod jako `index.html` i otworzyć go bezpośrednio w 
     </section>
 
     <footer>
-        <p>Do zobaczenia! Anna & Piotr © 2027</p>
+        <p>Czekamy na Was! • R & O © 2027</p>
     </footer>
 
-    <!-- JavaScript - Odliczanie i obsługa prostych zdarzeń -->
     <script>
         // Data docelowa: 20 sierpnia 2027, godzina 15:00
-        const weddingDate = new Date("August 20, 2027 15:00:00").getTime();
+        const targetDate = new Date(2027, 7, 20, 15, 0, 0).getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
-            const difference = weddingDate - now;
+            const difference = targetDate - now;
 
-            if (difference > 0) {
-                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-                document.getElementById("days").innerText = days;
-                document.getElementById("hours").innerText = hours;
-                document.getElementById("minutes").innerText = minutes;
-                document.getElementById("seconds").innerText = seconds;
-            } else {
-                document.querySelector(".countdown-container").innerHTML = "<h2>To już dzisiaj! Dzisiaj nasz ślub! 🎉</h2>";
+            if (difference <= 0) {
+                document.querySelector(".countdown-container").innerHTML = "<h2 style='text-align:center;'>To już dzisiaj! Witamy na naszym weselu! 🎉</h2>";
+                return;
             }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
         }
 
-        // Uruchamiamy odliczanie co sekundę
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
+        document.addEventListener("DOMContentLoaded", function() {
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        });
 
-        // Prosta obsługa formularza RSVP
         document.getElementById("rsvpForm").addEventListener("submit", function(e) {
             e.preventDefault();
             alert("Dziękujemy za przesłanie odpowiedzi!");
